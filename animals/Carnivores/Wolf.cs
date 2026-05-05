@@ -2,12 +2,16 @@
 
 public class Wolf:Carnivore
 {
-    public override void Speak()
+    public Wolf(int customLifespan) : base(customLifespan)
     {
-        if (IsLive)
+    }
+
+    public override void SpeakName()
+    {
+        if (isLive)
         {
             Console.WriteLine("I am wolf");
-            base.Speak();
+           
         }
         
     }
