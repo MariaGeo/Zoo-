@@ -1,4 +1,6 @@
-﻿namespace Zoo_exercise;
+﻿using System;
+
+namespace Zoo_exercise;
 
 public abstract class Carnivore : Animal
 
