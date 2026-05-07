@@ -1,14 +1,14 @@
-﻿namespace Zoo_exercise;
+﻿namespace Zoo_exercise.Animals.Carnivores;
 
 public class Wolf:Carnivore
 {
-    public Wolf(int customLifespan) : base(customLifespan)
+    public Wolf(int lifespan) : base(lifespan)
     {
     }
 
     public override void SpeakName()
     {
-        if (isLive)
+        if (IsLive)
         {
             Console.WriteLine("I am wolf");
            

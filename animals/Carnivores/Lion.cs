@@ -1,8 +1,8 @@
-﻿namespace Zoo_exercise;
+﻿namespace Zoo_exercise.Animals.Carnivores;
 
 public class Lion : Carnivore
 {
-    public Lion(int currentLifespan) : base(currentLifespan)
+    public Lion(int lifespan) : base(lifespan)
     {
     }
 

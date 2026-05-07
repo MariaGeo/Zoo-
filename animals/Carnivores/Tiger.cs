@@ -1,15 +1,15 @@
-﻿namespace Zoo_exercise;
+﻿namespace Zoo_exercise.Animals.Carnivores;
 
 public class Tiger : Carnivore
 {
- public Tiger(int customLifespan) : base(customLifespan)
+ public Tiger(int lifespan) : base(lifespan)
  {
  }
 
 
  public override void SpeakName()
  {
-  if (isLive)
+  if (IsLive)
   {
    Console.WriteLine("I am tiger");
    

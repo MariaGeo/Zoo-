@@ -1,39 +1,54 @@
-﻿using System;
+﻿using Zoo_exercise.Foods;
 
-namespace Zoo_exercise;
+namespace Zoo_exercise.Animals.Carnivores;
 
 public abstract class Carnivore : Animal
 
 {
-    public Carnivore(int currentLifespan) : base(currentLifespan)
+    protected Carnivore(int lifespan) : base(lifespan)
     {
     }
 
 
     public override void Eat(Food food)
     {
-        Console.WriteLine("I eat " + food.GetName());
-
-        if (!isLive)
+        if (!IsLive)
         {
             return;
         }
 
-        if (food.GetType() == typeof(Poison))
-        {
-            isLive = false;
-            currentLifespan=0;
-            return;
-        }
+        Console.WriteLine($"I eat {food.GetName()}");
 
-        if (food.GetType() == typeof(Meat) && currentLifespan < 5)
+        switch (food)
         {
-            currentLifespan++;
-            return;
+            case Poison:
+                IsLive = false;
+                LivePoints = 0;
+                return;
+            case Meat:
+                if (LivePoints < Lifespan)
+                {
+                    LivePoints++;
+                }
+                break;
+            default:
+                LivePoints--;
+                break;
         }
-
-        currentLifespan--;
+        //
+        //     if (food.GetType() == typeof(Poison))
+        //     {
+        //         IsLive = false;
+        //         LivePoints=0;
+        //         return;
+        //     }
+        //
+        //     if (food.GetType() == typeof(Meat) && LivePoints < Lifespan)
+        //     {
+        //         LivePoints++;
+        //         return;
+        //     }
+        //
+        //     LivePoints--;
     }
-
-    
 }

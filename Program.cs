@@ -1,6 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using Zoo_exercise;
+using Zoo_exercise.Animals;
+using Zoo_exercise.Animals.Carnivores;
+using Zoo_exercise.Foods;
 
 
 List<Food> bag = new List<Food>()

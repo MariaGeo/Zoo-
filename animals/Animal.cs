@@ -1,30 +1,35 @@
-﻿namespace Zoo_exercise;
+﻿using Zoo_exercise.Foods;
+
+namespace Zoo_exercise.Animals;
 
 public abstract class Animal
 {
-    public int currentLifespan { get; set; }
+    protected readonly int Lifespan;
 
-    //protected int CustomLifespan { get; set; }
-    public virtual Boolean isLive { get; set; } = true;
+    public int LivePoints { get; set; }
+    public virtual Boolean IsLive { get; set; } = true;
 
     protected Animal(int lifespan)
     {
-        currentLifespan = lifespan;
-       
+        this.Lifespan = lifespan;
+        LivePoints = Lifespan;
     }
 
     public abstract void Eat(Food food);
     public abstract void SpeakName();
 
-    public void SpeakLifespan()
+    public void SpeakLifePoints()
     {
-        Console.WriteLine("My lifespan is " + currentLifespan);
+        Console.WriteLine($"My LifePoints are {LivePoints}");
         Console.WriteLine("========================");
     }
 
 
     public virtual String ToString()
     {
-        return "Lifespan='" + currentLifespan + "; isLive= " + isLive;
+        return $"Lifespan= {Lifespan}, IsLive= {IsLive}";
     }
 }
+
+
+    

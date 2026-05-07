@@ -1,4 +1,10 @@
-﻿namespace Zoo_exercise;
+﻿
+
+using Zoo_exercise.Animals;
+using Zoo_exercise.Animals.Carnivores;
+using Zoo_exercise.Foods;
+
+namespace Zoo_exercise;
 using System.Collections.Generic;
 
 public class Person
@@ -10,7 +16,7 @@ public class Person
     {
        
         animal.Eat(food);
-        animal.SpeakLifespan();
+        animal.SpeakLifePoints();
     }
 
     public void FeedAllAnimals(List<Animal> animals, List<Food> bag)
@@ -19,7 +25,7 @@ public class Person
         {
             foreach (var animal in animals)
             {
-                if (!animal.isLive)
+                if (!animal.IsLive)
                 {
                     break;
                 }

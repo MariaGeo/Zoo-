@@ -1,6 +1,4 @@
-﻿using Microsoft.VisualBasic;
-
-namespace Zoo_exercise;
+﻿namespace Zoo_exercise.Foods;
 
 public abstract class Food()
 {
@@ -14,7 +12,7 @@ public abstract class Food()
 
     public override String ToString()
     {
-        return "FoodName='" + Name;
+        return $"FoodName={Name}";
     }
 
 
@@ -22,9 +20,4 @@ public abstract class Food()
     {
         return Name;
     }
-
-    // public FoodType GetFoodType()
-    //  {
-    //       return Type;
-    //   }
 }
