@@ -30,25 +30,15 @@ public abstract class Carnivore : Animal
                 {
                     LivePoints++;
                 }
+
                 break;
             default:
                 LivePoints--;
+                if (LivePoints == 0)
+                {
+                    IsLive = false;
+                }
                 break;
         }
-        //
-        //     if (food.GetType() == typeof(Poison))
-        //     {
-        //         IsLive = false;
-        //         LivePoints=0;
-        //         return;
-        //     }
-        //
-        //     if (food.GetType() == typeof(Meat) && LivePoints < Lifespan)
-        //     {
-        //         LivePoints++;
-        //         return;
-        //     }
-        //
-        //     LivePoints--;
     }
 }
