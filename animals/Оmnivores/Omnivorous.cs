@@ -1,10 +1,13 @@
 ﻿using Zoo_exercise.Foods;
 
-namespace Zoo_exercise.Animals.Carnivores;
+namespace Zoo_exercise.Animals.Оmnivorous;
 
-public abstract class Carnivore(int lifespan) : Animal(lifespan)
-
+public abstract class Omnivorous:Animal
 {
+    public Omnivorous(int lifespan) : base(lifespan)
+    {
+    }
+    
     public override void Eat(Food food)
     {
         if (!IsLive)
@@ -20,16 +23,8 @@ public abstract class Carnivore(int lifespan) : Animal(lifespan)
                 IsLive = false;
                 LivePoints = 0;
                 return;
-            case Meat:
-                if (LivePoints < Lifespan)
-                {
-                    LivePoints++;
-                }
-
-                break;
-            default:
-                LivePoints--;
-                if (LivePoints == 0)
+          default:
+               if (LivePoints == 0)
                 {
                     IsLive = false;
                 }
